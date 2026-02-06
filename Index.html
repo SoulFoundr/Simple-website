@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose Day for Shivi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffcccc, #ffe6e6);
+            color: #d63384;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px;
+        }
+        .message {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        button {
+            background: #d63384;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #b02a6a;
+        }
+        .petal {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwIDAgQzE1IDAgMjAgNSA1IDIwIDAgMTUgMCAxMCAwIDEwIiBmaWxsPSIjZGQzMzg0Ii8+Cjwvc3ZnPg==') no-repeat center;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Rose Day, Shivi! 🌹</h1>
+    <div class="message">
+        <p>Dear Shivi,</p>
+        <p>On this special Rose Day, I wanted to shower you with roses to show how much you mean to me. Each petal represents a moment of joy, love, and appreciation. You're the most beautiful flower in my garden! 💖</p>
+        <p>With all my love,</p>
+        <p>Nitin</p>
+	<img src="shivi.jpg" alt="Shivi with Roses" style="max-width: 300px; height: auto; border-radius: 10px; margin: 20px 0;">
+    </div>
+    <button onclick="sendRoses()">Send Virtual Roses</button>
+
+    <script>
+        function sendRoses() {
+            alert("Roses sent! 🌹🌹🌹 Shivi, you've made my day!");
+        }
+
+        // Create falling petals
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(petal);
+            setTimeout(() => petal.remove(), 5000);
+        }
+
+        setInterval(createPetal, 300);
+    </script>
+</body>
+</html>
