@@ -76,9 +76,12 @@
 	</audio>
 	
 	<script>
-	function toggleMusic() {
+	function playMusic() {
 	  const music = document.getElementById("bgMusic");
-	  music.paused ? music.play() : music.pause();
+	  music.play().catch(err => {
+	    alert("Tap once more to enable music 🎵");
+	    console.log(err);
+	  });
 	}
 	</script>
     <script>
@@ -100,6 +103,7 @@
     </script>
 </body>
 </html>
+
 
 
 
